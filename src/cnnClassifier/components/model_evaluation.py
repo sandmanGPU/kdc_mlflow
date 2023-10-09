@@ -1,8 +1,4 @@
 import os
-os.environ['MLFLOW_TRACKING_URI']="https://dagshub.com/sandmanGPU/kdc_mlflow.mlflow"
-os.environ['MLFLOW_TRACKING_USERNAME']="sandmanGPU"
-os.environ['MLFLOW_TRACKING_PASSWORD']="170fae55eed33119e40cf121df270c286e09c95f"
-
 import tensorflow as tf
 from pathlib import Path
 import mlflow
@@ -52,7 +48,7 @@ class Evaluation:
         self.model = self.load_model(self.config.path_to_model)
         self._valid_generator()
         self.score = self.model.evaluate(self.valid_generator)
-        self.save_score()
+        # self.save_score()
 
     def save_score(self):
         scores = {"loss": self.score[0], "accuracy": self.score[1]}
@@ -75,13 +71,13 @@ class Evaluation:
                 mlflow.keras.log_model(self.model, "model")
 
 
-try:
-    config= ConfigurationManager()
-    eval_config=config.get_evaluation_config()
-    evaluation=Evaluation(eval_config)
-    evaluation.evaluation()
-    evaluation.log_into_mlflow()
+# try:
+#     config= ConfigurationManager()
+#     eval_config=config.get_evaluation_config()
+#     evaluation=Evaluation(eval_config)
+#     evaluation.evaluation()
+#     evaluation.log_into_mlflow()
 
-except Exception as e:
-    raise e
+# except Exception as e:
+#     raise e
     
