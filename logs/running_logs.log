@@ -1275,3 +1275,107 @@ X==============================X]
 [2023-10-10 03:46:00,494: INFO: stage_04_model_evaluation: >>>>>>> stage Evaluation stage completed <<<<<<<
 
 X==============================X]
+[2023-10-10 09:02:26,245: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 09:02:26,246: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 09:03:19,917: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 09:03:19,917: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 09:03:20,733: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.8.79:8080]
+[2023-10-10 09:03:20,734: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-10-10 09:03:34,923: INFO: _internal: 127.0.0.1 - - [10/Oct/2023 09:03:34] "GET / HTTP/1.1" 200 -]
+[2023-10-10 09:04:19,538: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\flask_cors\decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "H:\git_kdc_mlflow\kdc_mlflow\app.py", line 46, in predictRoute
+    result = clApp.classifier.predict()
+  File "H:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\prediction.py", line 19, in predict
+    result = np.argmax(model.predict(test_image), axis=1)
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\smanandh\AppData\Local\Temp\__autograph_generated_fileuexvaycj.py", line 15, in tf__predict_function
+    retval_ = ag__.converted_call(ag__.ld(step_function), (ag__.ld(self), ag__.ld(iterator)), None, fscope)
+ValueError: in user code:
+
+    File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\engine\training.py", line 2041, in predict_function  *
+        return step_function(self, iterator)
+    File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\engine\training.py", line 2027, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\engine\training.py", line 2015, in run_step  **
+        outputs = model.predict_step(data)
+    File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\engine\training.py", line 1983, in predict_step
+        return self(x, training=False)
+    File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\engine\input_spec.py", line 295, in assert_input_compatibility
+        raise ValueError(
+
+    ValueError: Input 0 of layer "model" is incompatible with the layer: expected shape=(None, 244, 244, 3), found shape=(None, 224, 224, 3)
+
+[2023-10-10 09:04:19,542: INFO: _internal: 127.0.0.1 - - [10/Oct/2023 09:04:19] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2023-10-10 09:05:41,364: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 09:05:41,365: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 09:05:42,368: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.8.79:8080]
+[2023-10-10 09:05:42,368: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-10-10 09:05:44,573: INFO: _internal: 127.0.0.1 - - [10/Oct/2023 09:05:44] "GET / HTTP/1.1" 200 -]
+[2023-10-10 09:05:51,030: INFO: _internal: 127.0.0.1 - - [10/Oct/2023 09:05:51] "POST /predict HTTP/1.1" 200 -]
+[2023-10-10 09:05:59,397: INFO: _internal: 127.0.0.1 - - [10/Oct/2023 09:05:59] "POST /predict HTTP/1.1" 200 -]
+[2023-10-10 09:06:07,921: INFO: _internal: 127.0.0.1 - - [10/Oct/2023 09:06:07] "POST /predict HTTP/1.1" 200 -]
+[2023-10-10 09:06:15,641: INFO: _internal: 127.0.0.1 - - [10/Oct/2023 09:06:15] "POST /predict HTTP/1.1" 200 -]
+[2023-10-10 09:06:23,061: WARNING: def_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000001C88370D7E0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2023-10-10 09:06:23,075: INFO: _internal: 127.0.0.1 - - [10/Oct/2023 09:06:23] "POST /predict HTTP/1.1" 200 -]
+[2023-10-10 09:06:29,316: WARNING: def_function: 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000001C88370E710> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2023-10-10 09:06:29,327: INFO: _internal: 127.0.0.1 - - [10/Oct/2023 09:06:29] "POST /predict HTTP/1.1" 200 -]
+[2023-10-10 09:06:36,493: INFO: _internal: 127.0.0.1 - - [10/Oct/2023 09:06:36] "POST /predict HTTP/1.1" 200 -]
+[2023-10-10 09:06:44,847: INFO: _internal: 127.0.0.1 - - [10/Oct/2023 09:06:44] "POST /predict HTTP/1.1" 200 -]
+[2023-10-10 09:06:57,359: INFO: _internal: 127.0.0.1 - - [10/Oct/2023 09:06:57] "POST /predict HTTP/1.1" 200 -]
+[2023-10-10 09:07:04,055: INFO: _internal: 127.0.0.1 - - [10/Oct/2023 09:07:04] "POST /predict HTTP/1.1" 200 -]
+[2023-10-10 09:07:22,900: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 09:07:22,901: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 09:07:25,103: INFO: main: ****************************************]
+[2023-10-10 09:07:25,104: INFO: main: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 09:07:25,112: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 09:07:25,115: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 09:07:25,115: INFO: common: created directory at: artifacts]
+[2023-10-10 09:07:25,116: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-10-10 09:07:25,664: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 09:07:27,629: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 09:07:28,814: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\assets]
+[2023-10-10 09:07:29,906: INFO: main: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 09:07:29,907: INFO: main: ==========================================]
+[2023-10-10 09:07:29,911: INFO: main: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 09:07:29,916: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 09:07:29,919: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 09:07:29,920: INFO: common: created directory at: artifacts]
+[2023-10-10 09:07:29,920: INFO: common: created directory at: artifacts\training]
+[2023-10-10 09:11:37,031: INFO: main: >>>>>>> stage Training completed <<<<<<<
+
+X==============================X]
+[2023-10-10 09:11:37,031: INFO: main: ==========================================]
+[2023-10-10 09:11:37,036: INFO: main: >>>>>>> stage Evaluation started <<<<<<<]
+[2023-10-10 09:11:37,043: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 09:11:37,046: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 09:11:37,047: INFO: common: created directory at: artifacts]
+[2023-10-10 09:12:02,520: INFO: common: json file saved at: scores.json]
+[2023-10-10 09:12:02,521: INFO: main: >>>>>>> stage Evaluation completed <<<<<<<
+
+X==============================X]
+[2023-10-10 09:12:03,515: INFO: _internal: 127.0.0.1 - - [10/Oct/2023 09:12:03] "GET /train HTTP/1.1" 200 -]
+[2023-10-10 09:12:03,641: INFO: _internal: 127.0.0.1 - - [10/Oct/2023 09:12:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]

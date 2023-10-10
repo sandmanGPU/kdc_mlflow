@@ -33,3 +33,16 @@ export MLFLOW_TRACKING_PASSWORD=170fae55eed33119e40cf121df270c286e09c95f
 dvc init
 dvc repro
 dvc dag
+
+### DEPLOYMENT
+
+1. Build docker image of the source code
+
+2. Push docker image to ECR
+
+3. Launch EC2
+
+4. Pull docker image from ECR to EC2
+
+5. launch docker image in EC2
+

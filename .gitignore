@@ -1,5 +1,4 @@
 artifacts
 .dvc
-dvc.lock
-.dvcignore
 scores.json
+model/model.h5
