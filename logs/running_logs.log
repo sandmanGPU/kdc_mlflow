@@ -552,3 +552,726 @@ X==============================X]
 [2023-10-09 10:26:48,933: INFO: common: json file saved at: scores.json]
 [2023-10-09 10:26:57,844: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
 [2023-10-09 10:26:59,007: INFO: builder_impl: Assets written to: C:\Users\smanandh\AppData\Local\Temp\tmproyrtcz4\model\data\model\assets]
+[2023-10-10 01:45:46,314: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 01:45:46,315: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 01:45:49,230: INFO: main: >>>>>>> stage Data Ingestion stage started <<<<<<<]
+[2023-10-10 01:45:49,234: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 01:45:49,236: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 01:45:49,240: INFO: common: created directory at: artifacts]
+[2023-10-10 01:45:49,244: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-10-10 01:45:49,245: INFO: data_ingestion: Dataset already exists. Skipping download]
+[2023-10-10 01:45:49,245: ERROR: main: [Errno 2] No such file or directory: 'artifacts/data_ingestion/data.zip']
+Traceback (most recent call last):
+  File "h:\git_kdc_mlflow\kdc_mlflow\main.py", line 17, in <module>
+    obj.main()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 17, in main
+    data_ingestion.extract_zip_file()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\data_ingestion.py", line 42, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\zipfile.py", line 1251, in __init__
+    self.fp = io.open(file, filemode)
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/data_ingestion/data.zip'
+[2023-10-10 01:47:11,202: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 01:47:11,203: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 01:47:12,886: INFO: main: >>>>>>> stage Data Ingestion stage started <<<<<<<]
+[2023-10-10 01:47:12,890: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 01:47:12,892: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 01:47:12,893: INFO: common: created directory at: artifacts]
+[2023-10-10 01:47:12,893: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-10-10 01:47:12,894: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 01:47:31,579: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 01:47:39,989: INFO: main: >>>>>>> stage Data Ingestion stage completed <<<<<<<]
+[2023-10-10 01:47:39,989: INFO: main: ****************************************]
+[2023-10-10 01:47:39,990: INFO: main: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 01:47:39,993: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 01:47:39,997: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 01:47:39,998: INFO: common: created directory at: artifacts]
+[2023-10-10 01:47:40,002: INFO: common: created directory at: artifacts/prepare_basemodel]
+[2023-10-10 01:47:40,594: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 01:47:42,634: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 01:47:43,888: INFO: builder_impl: Assets written to: artifacts\prepare_basemodel\assets]
+[2023-10-10 01:47:44,726: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 01:47:44,821: INFO: main: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 01:47:44,822: INFO: main: ==========================================]
+[2023-10-10 01:47:44,822: INFO: main: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 01:47:44,825: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 01:47:44,827: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 01:47:44,828: INFO: common: created directory at: artifacts]
+[2023-10-10 01:47:44,832: INFO: common: created directory at: artifacts\training]
+[2023-10-10 01:47:44,833: ERROR: main: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5]
+Traceback (most recent call last):
+  File "h:\git_kdc_mlflow\kdc_mlflow\main.py", line 40, in <module>
+    obj.main()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_03_model_training.py", line 15, in main
+    training.get_base_model()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\model_training.py", line 14, in get_base_model
+    self.model=tf.keras.models.load_model(
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\saving\save.py", line 226, in load_model
+    raise IOError(
+OSError: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5
+[2023-10-10 01:50:34,881: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 01:50:34,881: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 01:53:15,517: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 01:53:15,517: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 01:53:17,393: INFO: main: >>>>>>> stage Data Ingestion stage started <<<<<<<]
+[2023-10-10 01:53:17,396: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 01:53:17,398: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 01:53:17,401: INFO: common: created directory at: artifacts]
+[2023-10-10 01:53:17,405: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-10-10 01:53:17,405: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 01:53:35,031: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 01:53:42,947: INFO: main: >>>>>>> stage Data Ingestion stage completed <<<<<<<]
+[2023-10-10 01:53:42,948: INFO: main: ****************************************]
+[2023-10-10 01:53:42,948: INFO: main: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 01:53:42,950: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 01:53:42,952: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 01:53:42,953: INFO: common: created directory at: artifacts]
+[2023-10-10 01:53:42,956: INFO: common: created directory at: artifacts/prepare_basemodel]
+[2023-10-10 01:53:43,474: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 01:53:45,473: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 01:53:46,843: INFO: builder_impl: Assets written to: artifacts\prepare_basemodel\assets]
+[2023-10-10 01:53:47,751: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 01:53:47,833: INFO: main: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 01:53:47,834: INFO: main: ==========================================]
+[2023-10-10 01:53:47,834: INFO: main: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 01:53:47,836: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 01:53:47,838: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 01:53:47,839: INFO: common: created directory at: artifacts]
+[2023-10-10 01:53:47,841: INFO: common: created directory at: artifacts\training]
+[2023-10-10 01:53:47,842: ERROR: main: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5]
+Traceback (most recent call last):
+  File "h:\git_kdc_mlflow\kdc_mlflow\main.py", line 40, in <module>
+    obj.main()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_03_model_training.py", line 15, in main
+    training.get_base_model()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\model_training.py", line 14, in get_base_model
+    self.model=tf.keras.models.load_model(
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\saving\save.py", line 226, in load_model
+    raise IOError(
+OSError: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5
+[2023-10-10 01:55:07,218: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 01:55:07,218: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 01:55:09,001: INFO: main: >>>>>>> stage Data Ingestion stage started <<<<<<<]
+[2023-10-10 01:55:09,005: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 01:55:09,007: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 01:55:09,010: INFO: common: created directory at: artifacts]
+[2023-10-10 01:55:09,013: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-10-10 01:55:09,013: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 01:55:26,791: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 01:55:34,697: INFO: main: >>>>>>> stage Data Ingestion stage completed <<<<<<<]
+[2023-10-10 01:55:34,698: INFO: main: ****************************************]
+[2023-10-10 01:55:34,698: INFO: main: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 01:55:34,700: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 01:55:34,703: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 01:55:34,703: INFO: common: created directory at: artifacts]
+[2023-10-10 01:55:34,707: INFO: common: created directory at: artifacts/prepare_basemodel]
+[2023-10-10 01:55:35,261: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 01:55:37,214: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 01:55:38,398: INFO: builder_impl: Assets written to: artifacts\prepare_basemodel\assets]
+[2023-10-10 01:55:39,371: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 01:55:39,462: INFO: main: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 01:55:39,462: INFO: main: ==========================================]
+[2023-10-10 01:55:39,462: INFO: main: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 01:55:39,465: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 01:55:39,467: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 01:55:39,468: INFO: common: created directory at: artifacts]
+[2023-10-10 01:55:39,473: INFO: common: created directory at: artifacts\training]
+[2023-10-10 01:55:39,473: ERROR: main: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5]
+Traceback (most recent call last):
+  File "h:\git_kdc_mlflow\kdc_mlflow\main.py", line 40, in <module>
+    obj.main()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_03_model_training.py", line 15, in main
+    training.get_base_model()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\model_training.py", line 14, in get_base_model
+    self.model=tf.keras.models.load_model(
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\saving\save.py", line 226, in load_model
+    raise IOError(
+OSError: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5
+[2023-10-10 02:23:46,385: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage started <<<<<<<]
+[2023-10-10 02:23:46,388: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 02:23:46,390: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 02:23:46,392: INFO: common: created directory at: artifacts]
+[2023-10-10 02:23:46,395: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-10-10 02:23:46,395: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 02:24:02,906: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 02:24:09,763: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage completed <<<<<<<]
+[2023-10-10 02:25:23,911: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage started <<<<<<<]
+[2023-10-10 02:25:23,913: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 02:25:23,915: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 02:25:23,918: INFO: common: created directory at: artifacts]
+[2023-10-10 02:25:23,921: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-10-10 02:25:23,921: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 02:25:41,820: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 02:25:49,422: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage completed <<<<<<<]
+[2023-10-10 02:37:39,612: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 02:37:39,613: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 02:37:40,361: INFO: stage_02_prepare_base_model: ****************************************]
+[2023-10-10 02:37:40,361: INFO: stage_02_prepare_base_model: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 02:37:40,364: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 02:37:40,366: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 02:37:40,366: INFO: common: created directory at: artifacts]
+[2023-10-10 02:37:40,370: INFO: common: created directory at: artifacts/prepare_basemodel]
+[2023-10-10 02:37:40,848: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 02:37:42,707: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 02:37:43,839: INFO: builder_impl: Assets written to: artifacts\prepare_basemodel\assets]
+[2023-10-10 02:37:44,784: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 02:37:44,866: INFO: stage_02_prepare_base_model: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 02:40:11,502: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage started <<<<<<<]
+[2023-10-10 02:40:11,505: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 02:40:11,508: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 02:40:11,508: INFO: common: created directory at: artifacts]
+[2023-10-10 02:40:11,509: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-10-10 02:40:11,509: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 02:40:29,087: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 02:40:36,111: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage completed <<<<<<<]
+[2023-10-10 02:43:40,603: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage started <<<<<<<]
+[2023-10-10 02:43:40,606: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 02:43:40,608: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 02:43:40,612: INFO: common: created directory at: artifacts]
+[2023-10-10 02:43:40,615: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-10-10 02:43:40,616: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 02:43:57,497: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 02:44:06,106: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage completed <<<<<<<]
+[2023-10-10 02:44:45,366: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 02:44:45,367: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 02:44:46,428: INFO: stage_02_prepare_base_model: ****************************************]
+[2023-10-10 02:44:46,428: INFO: stage_02_prepare_base_model: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 02:44:46,433: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 02:44:46,436: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 02:44:46,437: INFO: common: created directory at: artifacts]
+[2023-10-10 02:44:46,472: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-10-10 02:44:47,214: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 02:44:50,527: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 02:44:51,811: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\assets]
+[2023-10-10 02:44:52,796: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 02:44:52,875: INFO: stage_02_prepare_base_model: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 02:45:02,434: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 02:45:02,435: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 02:45:03,469: INFO: stage_03_model_training: ==========================================]
+[2023-10-10 02:45:03,469: INFO: stage_03_model_training: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 02:45:03,475: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 02:45:03,477: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 02:45:03,477: INFO: common: created directory at: artifacts]
+[2023-10-10 02:45:03,481: INFO: common: created directory at: artifacts\training]
+[2023-10-10 02:45:03,481: ERROR: stage_03_model_training: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5]
+Traceback (most recent call last):
+  File "H:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_03_model_training.py", line 25, in <module>
+    obj.main()
+  File "H:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_03_model_training.py", line 15, in main
+    training.get_base_model()
+  File "H:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\model_training.py", line 14, in get_base_model
+    self.model=tf.keras.models.load_model(
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\saving\save.py", line 226, in load_model
+    raise IOError(
+OSError: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5
+[2023-10-10 02:47:57,722: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 02:47:57,722: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 02:47:58,610: INFO: stage_02_prepare_base_model: ****************************************]
+[2023-10-10 02:47:58,610: INFO: stage_02_prepare_base_model: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 02:47:58,613: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 02:47:58,615: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 02:47:58,616: INFO: common: created directory at: artifacts]
+[2023-10-10 02:47:58,616: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-10-10 02:47:59,097: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 02:48:00,958: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 02:48:02,066: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\assets]
+[2023-10-10 02:48:03,010: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 02:48:03,095: INFO: stage_02_prepare_base_model: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 02:48:15,144: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 02:48:15,145: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 02:48:16,223: INFO: stage_03_model_training: ==========================================]
+[2023-10-10 02:48:16,223: INFO: stage_03_model_training: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 02:48:16,226: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 02:48:16,228: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 02:48:16,229: INFO: common: created directory at: artifacts]
+[2023-10-10 02:48:16,229: INFO: common: created directory at: artifacts\training]
+[2023-10-10 02:48:16,230: ERROR: stage_03_model_training: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5]
+Traceback (most recent call last):
+  File "H:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_03_model_training.py", line 25, in <module>
+    obj.main()
+  File "H:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_03_model_training.py", line 15, in main
+    training.get_base_model()
+  File "H:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\model_training.py", line 14, in get_base_model
+    self.model=tf.keras.models.load_model(
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\saving\save.py", line 226, in load_model
+    raise IOError(
+OSError: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5
+[2023-10-10 02:52:22,630: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage started <<<<<<<]
+[2023-10-10 02:52:22,633: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 02:52:22,636: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 02:52:22,637: INFO: common: created directory at: artifacts]
+[2023-10-10 02:52:22,637: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-10-10 02:52:22,638: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 02:52:43,459: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 02:52:50,750: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage completed <<<<<<<]
+[2023-10-10 03:02:37,993: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage started <<<<<<<]
+[2023-10-10 03:02:37,997: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:02:38,001: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:02:38,004: INFO: common: created directory at: artifacts]
+[2023-10-10 03:02:38,007: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-10-10 03:02:38,010: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 03:02:55,237: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 03:03:04,034: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage completed <<<<<<<]
+[2023-10-10 03:07:30,481: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage started <<<<<<<]
+[2023-10-10 03:07:30,484: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:07:30,486: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:07:30,489: INFO: common: created directory at: artifacts]
+[2023-10-10 03:07:30,492: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-10-10 03:07:30,493: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 03:07:47,417: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 03:07:55,224: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage completed <<<<<<<]
+[2023-10-10 03:14:17,225: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage started <<<<<<<]
+[2023-10-10 03:14:17,230: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:14:17,232: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:14:17,233: INFO: common: created directory at: artifacts]
+[2023-10-10 03:14:17,234: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-10-10 03:14:17,234: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 03:14:34,244: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 03:14:42,766: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage completed <<<<<<<]
+[2023-10-10 03:16:21,919: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:16:21,919: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:16:22,659: INFO: stage_02_prepare_base_model: ****************************************]
+[2023-10-10 03:16:22,659: INFO: stage_02_prepare_base_model: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 03:16:22,667: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:16:22,669: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:16:22,670: INFO: common: created directory at: artifacts]
+[2023-10-10 03:16:22,673: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-10-10 03:16:23,114: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:16:25,270: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 03:16:26,617: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\assets]
+[2023-10-10 03:16:27,552: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:16:27,637: INFO: stage_02_prepare_base_model: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 03:19:47,665: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:19:47,666: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:19:48,503: INFO: stage_03_model_training: ==========================================]
+[2023-10-10 03:19:48,503: INFO: stage_03_model_training: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 03:19:48,510: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:19:48,512: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:19:48,512: INFO: common: created directory at: artifacts]
+[2023-10-10 03:19:48,513: INFO: common: created directory at: artifacts\training]
+[2023-10-10 03:19:48,513: ERROR: stage_03_model_training: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5]
+Traceback (most recent call last):
+  File "H:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_03_model_training.py", line 25, in <module>
+    obj.main()
+  File "H:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_03_model_training.py", line 15, in main
+    training.get_base_model()
+  File "H:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\model_training.py", line 14, in get_base_model
+    self.model=tf.keras.models.load_model(
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\saving\save.py", line 226, in load_model
+    raise IOError(
+OSError: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5
+[2023-10-10 03:20:57,432: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:20:57,433: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:20:59,191: INFO: main: >>>>>>> stage Data Ingestion stage started <<<<<<<]
+[2023-10-10 03:20:59,200: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:20:59,204: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:20:59,204: INFO: common: created directory at: artifacts]
+[2023-10-10 03:20:59,205: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-10-10 03:20:59,205: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 03:21:15,987: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 03:21:15,995: ERROR: main: [Errno 13] Permission denied: 'artifacts\\data_ingestion\\kidney-ct-scan-image\\Normal\\Normal- (637).jpg']
+Traceback (most recent call last):
+  File "h:\git_kdc_mlflow\kdc_mlflow\main.py", line 17, in <module>
+    obj.main()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 28, in main
+    data_ingestion.extract_zip_file()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\data_ingestion.py", line 41, in extract_zip_file
+    zip_ref.extractall(unzip_path)
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\zipfile.py", line 1647, in extractall
+    self._extract_member(zipinfo, path, pwd)
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\zipfile.py", line 1701, in _extract_member
+    open(targetpath, "wb") as target:
+PermissionError: [Errno 13] Permission denied: 'artifacts\\data_ingestion\\kidney-ct-scan-image\\Normal\\Normal- (637).jpg'
+[2023-10-10 03:21:46,250: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:21:46,250: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:21:48,104: INFO: main: ****************************************]
+[2023-10-10 03:21:48,106: INFO: main: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 03:21:48,108: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:21:48,110: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:21:48,111: INFO: common: created directory at: artifacts]
+[2023-10-10 03:21:48,112: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-10-10 03:21:48,645: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:21:50,572: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 03:21:51,791: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\assets]
+[2023-10-10 03:21:52,777: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:21:52,782: ERROR: main: [Errno 13] Unable to create file (unable to open file: name = 'artifacts\prepare_basemodel\base_model.h5', errno = 13, error message = 'Permission denied', flags = 13, o_flags = 302)]
+Traceback (most recent call last):
+  File "h:\git_kdc_mlflow\kdc_mlflow\main.py", line 28, in <module>
+    obj.main()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_02_prepare_base_model.py", line 17, in main
+    prepare_base_model.update_base_model()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\prepare_base_model.py", line 58, in update_base_model
+    self.save_model(path=self.config.updated_base_model_path, model=self.model)
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\prepare_base_model.py", line 62, in save_model
+    model.save(path)
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\h5py\_hl\files.py", line 567, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\h5py\_hl\files.py", line 237, in make_fid
+    fid = h5f.create(name, h5f.ACC_TRUNC, fapl=fapl, fcpl=fcpl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 126, in h5py.h5f.create
+PermissionError: [Errno 13] Unable to create file (unable to open file: name = 'artifacts\prepare_basemodel\base_model.h5', errno = 13, error message = 'Permission denied', flags = 13, o_flags = 302)
+[2023-10-10 03:22:17,265: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:22:17,265: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:22:19,011: INFO: main: ****************************************]
+[2023-10-10 03:22:19,012: INFO: main: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 03:22:19,015: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:22:19,017: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:22:19,017: INFO: common: created directory at: artifacts]
+[2023-10-10 03:22:19,018: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-10-10 03:22:19,553: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:22:21,625: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 03:22:22,875: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\assets]
+[2023-10-10 03:22:23,846: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:22:23,849: ERROR: main: [Errno 13] Unable to create file (unable to open file: name = 'artifacts\prepare_basemodel\base_model.h5', errno = 13, error message = 'Permission denied', flags = 13, o_flags = 302)]
+Traceback (most recent call last):
+  File "h:\git_kdc_mlflow\kdc_mlflow\main.py", line 28, in <module>
+    obj.main()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_02_prepare_base_model.py", line 17, in main
+    prepare_base_model.update_base_model()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\prepare_base_model.py", line 58, in update_base_model
+    self.save_model(path=self.config.updated_base_model_path, model=self.model)
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\prepare_base_model.py", line 62, in save_model
+    model.save(path)
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\h5py\_hl\files.py", line 567, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\h5py\_hl\files.py", line 237, in make_fid
+    fid = h5f.create(name, h5f.ACC_TRUNC, fapl=fapl, fcpl=fcpl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 126, in h5py.h5f.create
+PermissionError: [Errno 13] Unable to create file (unable to open file: name = 'artifacts\prepare_basemodel\base_model.h5', errno = 13, error message = 'Permission denied', flags = 13, o_flags = 302)
+[2023-10-10 03:22:53,786: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:22:53,787: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:22:55,219: INFO: main: ****************************************]
+[2023-10-10 03:22:55,220: INFO: main: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 03:22:55,222: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:22:55,224: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:22:55,224: INFO: common: created directory at: artifacts]
+[2023-10-10 03:22:55,225: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-10-10 03:22:55,682: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:22:57,594: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 03:22:58,741: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\assets]
+[2023-10-10 03:22:59,698: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:22:59,809: INFO: main: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 03:22:59,810: INFO: main: ==========================================]
+[2023-10-10 03:22:59,810: INFO: main: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 03:22:59,813: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:22:59,816: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:22:59,816: INFO: common: created directory at: artifacts]
+[2023-10-10 03:22:59,817: INFO: common: created directory at: artifacts\training]
+[2023-10-10 03:22:59,818: ERROR: main: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5]
+Traceback (most recent call last):
+  File "h:\git_kdc_mlflow\kdc_mlflow\main.py", line 40, in <module>
+    obj.main()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_03_model_training.py", line 15, in main
+    training.get_base_model()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\model_training.py", line 14, in get_base_model
+    self.model=tf.keras.models.load_model(
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\saving\save.py", line 226, in load_model
+    raise IOError(
+OSError: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5
+[2023-10-10 03:23:34,506: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:23:34,507: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:23:35,959: INFO: main: ****************************************]
+[2023-10-10 03:23:35,960: INFO: main: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 03:23:35,963: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:23:35,964: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:23:35,965: INFO: common: created directory at: artifacts]
+[2023-10-10 03:23:35,967: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-10-10 03:23:36,406: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:23:38,686: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 03:23:39,911: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\assets]
+[2023-10-10 03:23:40,802: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:23:40,901: INFO: main: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 03:23:40,902: INFO: main: ==========================================]
+[2023-10-10 03:23:40,902: INFO: main: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 03:23:40,905: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:23:40,907: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:23:40,907: INFO: common: created directory at: artifacts]
+[2023-10-10 03:23:40,911: INFO: common: created directory at: artifacts\training]
+[2023-10-10 03:23:40,912: ERROR: main: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5]
+Traceback (most recent call last):
+  File "h:\git_kdc_mlflow\kdc_mlflow\main.py", line 40, in <module>
+    obj.main()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_03_model_training.py", line 15, in main
+    training.get_base_model()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\model_training.py", line 14, in get_base_model
+    self.model=tf.keras.models.load_model(
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\saving\save.py", line 226, in load_model
+    raise IOError(
+OSError: No file or directory found at artifacts\prepare_basemodel\base_model_updated.h5
+[2023-10-10 03:25:49,965: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:25:49,966: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:25:51,334: INFO: main: ****************************************]
+[2023-10-10 03:25:51,338: INFO: main: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 03:25:51,340: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:25:51,341: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:25:51,341: INFO: common: created directory at: artifacts]
+[2023-10-10 03:25:51,344: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-10-10 03:25:51,768: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:25:54,085: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 03:25:55,111: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\assets]
+[2023-10-10 03:25:55,976: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:25:56,064: INFO: main: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 03:25:56,065: INFO: main: ==========================================]
+[2023-10-10 03:25:56,066: INFO: main: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 03:25:56,069: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:25:56,071: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:25:56,072: INFO: common: created directory at: artifacts]
+[2023-10-10 03:25:56,076: INFO: common: created directory at: artifacts\training]
+[2023-10-10 03:25:56,077: ERROR: main: No file or directory found at artifacts\prepare_base_model\base_model_updated.h5]
+Traceback (most recent call last):
+  File "h:\git_kdc_mlflow\kdc_mlflow\main.py", line 40, in <module>
+    obj.main()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_03_model_training.py", line 15, in main
+    training.get_base_model()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\model_training.py", line 14, in get_base_model
+    self.model=tf.keras.models.load_model(
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\saving\save.py", line 226, in load_model
+    raise IOError(
+OSError: No file or directory found at artifacts\prepare_base_model\base_model_updated.h5
+[2023-10-10 03:27:24,992: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:27:24,992: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:27:26,472: INFO: main: ****************************************]
+[2023-10-10 03:27:26,476: INFO: main: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 03:27:26,478: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:27:26,480: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:27:26,480: INFO: common: created directory at: artifacts]
+[2023-10-10 03:27:26,481: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-10-10 03:27:26,906: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:27:28,817: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 03:27:30,050: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\assets]
+[2023-10-10 03:27:31,004: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:27:31,129: INFO: main: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 03:27:31,129: INFO: main: ==========================================]
+[2023-10-10 03:27:31,130: INFO: main: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 03:27:31,135: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:27:31,138: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:27:31,139: INFO: common: created directory at: artifacts]
+[2023-10-10 03:27:31,140: INFO: common: created directory at: artifacts\training]
+[2023-10-10 03:27:31,141: ERROR: main: No file or directory found at artifacts\prepare_base_model\base_model_updated.h5]
+Traceback (most recent call last):
+  File "h:\git_kdc_mlflow\kdc_mlflow\main.py", line 40, in <module>
+    obj.main()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_03_model_training.py", line 15, in main
+    training.get_base_model()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\model_training.py", line 14, in get_base_model
+    self.model=tf.keras.models.load_model(
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\saving\save.py", line 226, in load_model
+    raise IOError(
+OSError: No file or directory found at artifacts\prepare_base_model\base_model_updated.h5
+[2023-10-10 03:29:21,871: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:29:21,872: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:29:23,169: INFO: main: ****************************************]
+[2023-10-10 03:29:23,173: INFO: main: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 03:29:23,175: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:29:23,177: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:29:23,178: INFO: common: created directory at: artifacts]
+[2023-10-10 03:29:23,178: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-10-10 03:29:23,605: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:29:25,572: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 03:29:26,643: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\assets]
+[2023-10-10 03:29:27,582: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:29:27,695: INFO: main: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 03:29:27,696: INFO: main: ==========================================]
+[2023-10-10 03:29:27,697: INFO: main: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 03:29:27,699: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:29:27,702: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:29:27,703: INFO: common: created directory at: artifacts]
+[2023-10-10 03:29:27,703: INFO: common: created directory at: artifacts\training]
+[2023-10-10 03:29:28,096: WARNING: hdf5_format: No training configuration found in the save file, so the model was *not* compiled. Compile it manually.]
+[2023-10-10 03:29:28,165: ERROR: main: You must compile your model before training/testing. Use `model.compile(optimizer, loss)`.]
+Traceback (most recent call last):
+  File "h:\git_kdc_mlflow\kdc_mlflow\main.py", line 40, in <module>
+    obj.main()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\pipeline\stage_03_model_training.py", line 17, in main
+    training.train()
+  File "h:\git_kdc_mlflow\kdc_mlflow\src\cnnClassifier\components\model_training.py", line 68, in train
+    self.model.fit(
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\smanandh\.conda\envs\ASL\lib\site-packages\keras\engine\training.py", line 3618, in _assert_compile_was_called
+    raise RuntimeError(
+RuntimeError: You must compile your model before training/testing. Use `model.compile(optimizer, loss)`.
+[2023-10-10 03:32:59,100: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:32:59,101: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:33:00,521: INFO: main: ****************************************]
+[2023-10-10 03:33:00,524: INFO: main: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 03:33:00,527: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:33:00,528: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:33:00,529: INFO: common: created directory at: artifacts]
+[2023-10-10 03:33:00,529: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-10-10 03:33:00,961: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:33:02,780: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 03:33:03,864: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\assets]
+[2023-10-10 03:33:04,803: INFO: main: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 03:33:04,804: INFO: main: ==========================================]
+[2023-10-10 03:33:04,804: INFO: main: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 03:33:04,807: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:33:04,809: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:33:04,810: INFO: common: created directory at: artifacts]
+[2023-10-10 03:33:04,810: INFO: common: created directory at: artifacts\training]
+[2023-10-10 03:33:28,403: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:33:28,403: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:33:29,747: INFO: main: ****************************************]
+[2023-10-10 03:33:29,750: INFO: main: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 03:33:29,752: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:33:29,754: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:33:29,755: INFO: common: created directory at: artifacts]
+[2023-10-10 03:33:29,755: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-10-10 03:33:30,179: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:33:31,923: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 03:33:33,057: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\assets]
+[2023-10-10 03:33:34,119: INFO: main: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 03:33:34,119: INFO: main: ==========================================]
+[2023-10-10 03:33:34,120: INFO: main: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 03:33:34,123: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:33:34,126: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:33:34,127: INFO: common: created directory at: artifacts]
+[2023-10-10 03:33:34,127: INFO: common: created directory at: artifacts\training]
+[2023-10-10 03:34:46,144: INFO: main: >>>>>>> stage Training completed <<<<<<<
+
+X==============================X]
+[2023-10-10 03:34:46,145: INFO: main: ==========================================]
+[2023-10-10 03:34:46,145: INFO: main: >>>>>>> stage Evaluation started <<<<<<<]
+[2023-10-10 03:34:46,151: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:34:46,154: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:34:46,155: INFO: common: created directory at: artifacts]
+[2023-10-10 03:35:06,269: INFO: common: json file saved at: scores.json]
+[2023-10-10 03:35:06,270: INFO: main: >>>>>>> stage Evaluation completed <<<<<<<
+
+X==============================X]
+[2023-10-10 03:36:25,046: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage started <<<<<<<]
+[2023-10-10 03:36:25,050: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:36:25,053: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:36:25,056: INFO: common: created directory at: artifacts]
+[2023-10-10 03:36:25,059: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-10-10 03:36:25,059: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 03:36:42,343: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-10-10 03:36:49,419: INFO: stage_01_data_ingestion: >>>>>>> stage Data Ingestion stage completed <<<<<<<]
+[2023-10-10 03:37:15,533: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:37:15,533: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:37:16,245: INFO: stage_02_prepare_base_model: ****************************************]
+[2023-10-10 03:37:16,245: INFO: stage_02_prepare_base_model: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 03:37:16,251: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:37:16,253: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:37:16,254: INFO: common: created directory at: artifacts]
+[2023-10-10 03:37:16,256: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-10-10 03:37:16,745: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:37:19,052: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 03:37:20,389: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\assets]
+[2023-10-10 03:37:21,277: INFO: stage_02_prepare_base_model: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 03:38:11,657: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:38:11,657: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:38:12,376: INFO: stage_02_prepare_base_model: ****************************************]
+[2023-10-10 03:38:12,376: INFO: stage_02_prepare_base_model: >>>>>>> stage Prepare base model started <<<<<<<]
+[2023-10-10 03:38:12,382: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:38:12,385: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:38:12,386: INFO: common: created directory at: artifacts]
+[2023-10-10 03:38:12,389: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-10-10 03:38:12,871: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-10-10 03:38:15,482: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2023-10-10 03:38:17,051: INFO: builder_impl: Assets written to: artifacts\prepare_base_model\assets]
+[2023-10-10 03:38:18,075: INFO: stage_02_prepare_base_model: >>>>>>> stage Prepare base model completed <<<<<<<
+
+X-------------------------------------------------X]
+[2023-10-10 03:38:27,185: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:38:27,185: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:38:28,084: INFO: stage_03_model_training: ==========================================]
+[2023-10-10 03:38:28,084: INFO: stage_03_model_training: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 03:38:28,093: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:38:28,095: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:38:28,096: INFO: common: created directory at: artifacts]
+[2023-10-10 03:38:28,099: INFO: common: created directory at: artifacts\training]
+[2023-10-10 03:39:45,754: INFO: stage_03_model_training: >>>>>>> stage Training completed <<<<<<<
+
+X==============================X]
+[2023-10-10 03:39:56,654: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:39:56,655: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:39:58,616: INFO: stage_04_model_evaluation: ==========================================]
+[2023-10-10 03:39:58,618: INFO: stage_04_model_evaluation: >>>>>>> stage Evaluation stage started <<<<<<<]
+[2023-10-10 03:39:58,623: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:39:58,625: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:39:58,626: INFO: common: created directory at: artifacts]
+[2023-10-10 03:40:28,504: INFO: common: json file saved at: scores.json]
+[2023-10-10 03:40:28,504: INFO: stage_04_model_evaluation: >>>>>>> stage Evaluation stage completed <<<<<<<
+
+X==============================X]
+[2023-10-10 03:41:30,606: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:41:30,607: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:41:31,576: INFO: stage_03_model_training: ==========================================]
+[2023-10-10 03:41:31,576: INFO: stage_03_model_training: >>>>>>> stage Training started <<<<<<<]
+[2023-10-10 03:41:31,582: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:41:31,584: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:41:31,584: INFO: common: created directory at: artifacts]
+[2023-10-10 03:41:31,585: INFO: common: created directory at: artifacts\training]
+[2023-10-10 03:45:15,242: INFO: stage_03_model_training: >>>>>>> stage Training completed <<<<<<<
+
+X==============================X]
+[2023-10-10 03:45:26,508: INFO: utils: Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.]
+[2023-10-10 03:45:26,509: INFO: utils: NumExpr defaulting to 8 threads.]
+[2023-10-10 03:45:28,623: INFO: stage_04_model_evaluation: ==========================================]
+[2023-10-10 03:45:28,625: INFO: stage_04_model_evaluation: >>>>>>> stage Evaluation stage started <<<<<<<]
+[2023-10-10 03:45:28,634: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-10-10 03:45:28,637: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-10-10 03:45:28,637: INFO: common: created directory at: artifacts]
+[2023-10-10 03:46:00,493: INFO: common: json file saved at: scores.json]
+[2023-10-10 03:46:00,494: INFO: stage_04_model_evaluation: >>>>>>> stage Evaluation stage completed <<<<<<<
+
+X==============================X]

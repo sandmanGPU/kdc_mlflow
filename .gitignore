@@ -1,2 +1,5 @@
-artifacts/*
-.conda
+artifacts
+.dvc
+dvc.lock
+.dvcignore
+scores.json

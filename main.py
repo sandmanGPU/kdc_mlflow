@@ -5,20 +5,20 @@ os.environ['MLFLOW_TRACKING_PASSWORD']="170fae55eed33119e40cf121df270c286e09c95f
 
 from src.cnnClassifier import logger
 from src.cnnClassifier.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
-from src.cnnClassifier.pipeline.stage_02_prepare_based_model import PrepareBaseModelPipeline
+from src.cnnClassifier.pipeline.stage_02_prepare_base_model import PrepareBaseModelPipeline
 from src.cnnClassifier.pipeline.stage_03_model_training import ModelTrainingPipeline
 from src.cnnClassifier.pipeline.stage_04_model_evaluation import EvaluationPipeline
 
-STAGE_NAME = "Data Ingestion stage"
+# STAGE_NAME = "Data Ingestion stage"
 
-try:
-    logger.info(f">>>>>>> stage {STAGE_NAME} started <<<<<<<")
-    obj = DataIngestionTrainingPipeline()
-    obj.main()
-    logger.info(f">>>>>>> stage {STAGE_NAME} completed <<<<<<<")
-except Exception as e:
-    logger.exception(e)
-    raise e
+# try:
+#     logger.info(f">>>>>>> stage {STAGE_NAME} started <<<<<<<")
+#     obj = DataIngestionTrainingPipeline()
+#     obj.main()
+#     logger.info(f">>>>>>> stage {STAGE_NAME} completed <<<<<<<")
+# except Exception as e:
+#     logger.exception(e)
+#     raise e
 
 STAGE_NAME = "Prepare base model"
 try:
